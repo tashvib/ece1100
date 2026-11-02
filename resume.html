@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Resume · Tashvi Bansal</title>
+    <meta name="description" content="Tashvi Bansal — Georgia Tech Computer Engineering student. ECE 1100 ePortfolio." />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="header-inner">
+        <a class="brand" href="index.html">Tashvi Bansal</a>
+        <nav class="site-nav" aria-label="Pages">
+          <a href="index.html">Home</a>
+          <a href="bio.html">Biography</a>
+          <a href="resume.html" aria-current="page" class="active">Resume</a>
+          <a href="goals.html">Career Goals</a>
+          <a href="projects.html">Projects</a>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <section class="page-head">
+        <div class="wrap">
+          <h1 class="page-title">Resume</h1>
+          <p class="section-sub">View it below or download a copy.</p>
+        </div>
+      </section>
+      <section class="section section-flush">
+        <div class="wrap">
+          <div class="hero-actions resume-actions">
+            <a class="btn btn-primary" href="assets/resume.pdf" download="Tashvi_Bansal_Resume.pdf">Download PDF</a>
+            <a class="btn btn-ghost" href="assets/resume.pdf" target="_blank" rel="noopener noreferrer">Open in new tab</a>
+          </div>
+          <div class="resume-frame card">
+            <object data="assets/resume.pdf" type="application/pdf" aria-label="Tashvi Bansal resume">
+              <p class="resume-fallback">Your browser can't show the PDF here. <a href="assets/resume.pdf" download>Download the resume</a> instead.</p>
+            </object>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="wrap footer-inner">
+        <p>© <span id="year"></span> Tashvi Bansal</p>
+        <a href="https://github.com/tashvib" target="_blank" rel="noopener noreferrer">GitHub</a>
+      </div>
+    </footer>
+
+    <script src="site.js"></script>
+  </body>
+</html>

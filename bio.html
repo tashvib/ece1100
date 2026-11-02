@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Biography · Tashvi Bansal</title>
+    <meta name="description" content="Tashvi Bansal — Georgia Tech Computer Engineering student. ECE 1100 ePortfolio." />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="header-inner">
+        <a class="brand" href="index.html">Tashvi Bansal</a>
+        <nav class="site-nav" aria-label="Pages">
+          <a href="index.html">Home</a>
+          <a href="bio.html" aria-current="page" class="active">Biography</a>
+          <a href="resume.html">Resume</a>
+          <a href="goals.html">Career Goals</a>
+          <a href="projects.html">Projects</a>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <section class="page-head">
+        <div class="wrap">
+          <h1 class="page-title">Biography</h1>
+          <p class="section-sub">A little about me and my background.</p>
+        </div>
+      </section>
+      <section class="section section-flush">
+        <div class="wrap prose">
+          <!-- Elevator pitch: keep this to ~30 seconds out loud. -->
+          <p class="lede">I'm Tashvi Bansal, a first-year Computer Engineering student at Georgia Tech who loves working where AI meets hardware. I've co-authored research on making large language models reason more faithfully, designed digital logic in SystemVerilog, and shipped an iOS app, and I'm looking for a Summer 2027 internship in AI/ML hardware acceleration, digital design, or explainable AI.</p>
+
+          <!-- TODO: add personal details: where you grew up, what first got you into engineering, etc. -->
+          <p>My path into engineering started with building things: an adventure game coded from scratch, and GreenOvation, an award-winning iOS app that turns waste sorting and sustainability education into a game. Those projects taught me how much I enjoy taking an idea all the way from a sketch to something people can actually use.</p>
+
+          <p>From there I moved into research. I co-authored <em>Follow My Lead</em>, a paper on neurosymbolic methods that improved LLM logical reasoning by 20.7% without expensive retraining, and presented it at Advances in Cognitive Systems at Georgia Tech. Earlier projects had me building NLP pipelines to study media narratives and transformer models to predict community homelessness, and presenting that work to rooms of 150+ researchers.</p>
+
+          <p>I also care about making technology accessible. I helped build Mitra, a low-cost Raspberry Pi tutoring device for students without reliable internet, led summer coding camps as a Code Coach, and have tutored learners across five countries.</p>
+
+          <p>At Georgia Tech, I want to go deeper into the hardware side of AI: how chips and digital systems can make intelligent software faster, cheaper, and more trustworthy.</p>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="wrap">
+          <div class="section-head">
+            <h2>Teaching &amp; community</h2>
+          </div>
+          <div id="community-list" class="community-grid"></div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="wrap footer-inner">
+        <p>© <span id="year"></span> Tashvi Bansal</p>
+        <a href="https://github.com/tashvib" target="_blank" rel="noopener noreferrer">GitHub</a>
+      </div>
+    </footer>
+
+    <script src="site.js"></script>
+  </body>
+</html>

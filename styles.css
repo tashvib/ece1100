@@ -197,6 +197,46 @@ h1, h2, h3{line-height:1.2; margin:0}
 .community-card{padding:24px 26px}
 
 /* ---------------------------------------------------------------
+   Multi-page additions
+   --------------------------------------------------------------- */
+.page-head{padding:72px 0 8px}
+.page-title{font-family:'Playfair Display', Georgia, serif; font-weight:700; font-size:clamp(36px, 5.5vw, 56px); letter-spacing:-0.01em}
+.section-flush{border-top:none; padding-top:32px}
+
+/* home tiles */
+.tile-grid{display:grid; grid-template-columns:repeat(auto-fit, minmax(210px, 1fr)); gap:16px; margin-top:8px}
+.tile{display:flex; flex-direction:column; gap:6px; padding:20px 22px; text-decoration:none; color:var(--text)}
+.tile-title{font-weight:600; font-size:17px}
+.tile-title::after{content:" →"; color:var(--gold)}
+.tile-text{color:var(--muted); font-size:14px}
+
+/* bio */
+.prose{max-width:72ch}
+.prose p{color:var(--muted); font-size:17px; margin:0 0 18px}
+.prose .lede{color:var(--text); font-size:19px; border-left:3px solid var(--gold); padding-left:18px}
+
+/* resume */
+.resume-actions{margin-bottom:20px}
+.resume-frame{overflow:hidden; height:85vh; min-height:520px}
+.resume-frame:hover{transform:none}
+.resume-frame object{width:100%; height:100%; display:block}
+.resume-fallback{padding:24px; color:var(--muted)}
+
+/* goals */
+.goals-grid{display:grid; grid-template-columns:repeat(auto-fit, minmax(300px, 1fr)); gap:20px}
+.goal-card{padding:26px 28px}
+
+/* featured discovery project */
+.featured-card{display:grid; grid-template-columns:1.1fr 1fr; overflow:hidden; border-color:var(--gold-soft)}
+.featured-media{background:var(--surface-2); min-height:260px; display:flex; align-items:center; justify-content:center}
+.featured-media img{width:100%; height:100%; object-fit:cover}
+.featured-media iframe{width:100%; height:100%; min-height:260px; border:0}
+.media-placeholder{color:var(--muted); font-size:14px}
+.featured-body{padding:26px 28px; display:flex; flex-direction:column}
+.featured-body .card-title{font-size:22px}
+.mini-head{font-size:14px; font-weight:600; margin:18px 0 0}
+
+/* ---------------------------------------------------------------
    Footer
    --------------------------------------------------------------- */
 .site-footer{border-top:1px solid var(--border); padding:28px 0 36px; color:var(--muted); font-size:14px}
@@ -226,13 +266,16 @@ h1, h2, h3{line-height:1.2; margin:0}
   :root{--header-h:auto}
   .site-header{height:auto}
   .header-inner{flex-direction:column; align-items:flex-start; gap:6px; padding:12px 16px 8px}
-  .site-nav{width:100%; overflow-x:auto; margin-left:-10px; scrollbar-width:none}
+  .site-nav{width:100%; flex-wrap:wrap; margin-left:-10px}
   .site-nav::-webkit-scrollbar{display:none}
   .site-nav a{padding:6px 10px; flex:0 0 auto}
   html{scroll-padding-top:110px}
   .wrap{padding:0 16px}
   .hero{padding:48px 0 48px}
   .section{padding:52px 0}
-  .research-card, .community-card{padding:20px}
-  .projects-grid, .community-grid{grid-template-columns:1fr}
+  .research-card, .community-card, .goal-card, .featured-body{padding:20px}
+  .page-head{padding:40px 0 0}
+  .featured-card{grid-template-columns:1fr}
+  .resume-frame{height:70vh}
+  .projects-grid, .community-grid, .goals-grid{grid-template-columns:1fr}
 }
