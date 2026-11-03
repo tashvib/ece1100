@@ -21,7 +21,7 @@ const discoveryProject = {
 const projects = [
   {
     name: "RISC-V CPU",
-    eyebrow: "Silicon Jackets · Aug 2026 – Present",
+    eyebrow: "Silicon Jackets | Aug 2026 – Present",
     image: "assets/riscv-layout-card.webp",
     imageAlt: "Cadence Virtuoso chip layout of the RISC-V CPU alongside Pegasus DRC results",
     placeholder: "RTL → GDSII",
@@ -53,7 +53,7 @@ const projects = [
 const research = [
   {
     title: "GPU Cluster Optimization and Benchmarking",
-    venue: "AI@GT Applied Research Division · Georgia Tech",
+    venue: "AI@GT Applied Research Division, Georgia Tech",
     upcoming: true,
     points: [
       "Selected to join an applied research project under AI@GT's Applied Research Division, working hands-on with a cluster of 7 NVIDIA RTX 3090 GPUs at Georgia Tech's Advanced Technology Development Center (ATDC).",
@@ -64,7 +64,7 @@ const research = [
   },
   {
     title: "Know Your Limits: On the Faithfulness of LLMs as Solvers and Autoformalizers in Legal Reasoning",
-    venue: "ICML 2026 Workshops · 2026",
+    venue: "ICML 2026 Workshops",
     pdf: "https://arxiv.org/pdf/2606.16118",
     points: [
       "Research Intern at the AIEA Lab (Prof. Leilani Gilpin), UC Santa Cruz, studying LLM reliability and formal reasoning.",
@@ -78,7 +78,7 @@ const research = [
   },
   {
     title: "Follow My Lead: Logical Fallacy Classification with Knowledge-Augmented LLMs",
-    venue: "arXiv · 2025",
+    venue: "arXiv (2025)",
     pdf: "https://arxiv.org/pdf/2510.09970",
     points: [
       "Co-authored AI reasoning paper",
@@ -93,7 +93,7 @@ const research = [
   },
   {
     title: "Analyzing Media Narratives with Machine Learning: Topic Alignment and Sentiment in Rally Speeches and News Media Coverage",
-    venue: "Paper · 2024",
+    venue: "Research Paper (2024)",
     pdf: "https://drive.google.com/file/d/1-46Ep7oWloXVb9eyrHY4FGZORyh-WCLt/view?usp=sharing",
     points: [
       "Built Natural Language Processing pipelines to discover political bias patterns",
@@ -107,7 +107,7 @@ const research = [
   },
   {
     title: "Counterfactual Loss Improves Feature-Token Transformer Performance in Community Homelessness Prediction",
-    venue: "Paper · 2024",
+    venue: "Research Paper (2024)",
     pdf: "https://drive.google.com/file/d/1pxGPWxUAHrLOtAsLrvLUJMcptFZYDSG_/view?usp=sharing",
     poster: "https://docs.google.com/presentation/d/1sH1uCYneM2FHOw3DITIsagd2ubruiLCXc8imiBe4tEo/edit?usp=sharing",
     points: [
@@ -193,7 +193,7 @@ function renderDiscovery(container){
   }
 
   const body = el('div', 'featured-body');
-  body.appendChild(el('div', 'eyebrow', 'Featured · Discovery Project'));
+  body.appendChild(el('div', 'eyebrow', 'Featured Discovery Project'));
   const title = el('h3', 'card-title'); title.textContent = p.name; body.appendChild(title);
   if(p.summary){ const summary = el('p', 'card-text'); summary.textContent = p.summary; body.appendChild(summary); }
   if(p.outcomes && p.outcomes.length){
