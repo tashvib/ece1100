@@ -36,15 +36,15 @@ const projects = [
   },
   {
     name: "Murder On Enchanted Island",
-    eyebrow: "Java Game | 2023",
-    description: "A multi-genre adventure game built entirely from scratch.",
+    eyebrow: "Game Developer | 2023",
+    description: "A complete adventure game built from scratch in Java, without a game engine.",
     points: [
-      "Built a three-level adventure game from scratch in Java Swing (about 6,000 lines of code) where players work through mini-games to escape an island and its killer.",
-      "Level 1 is a grid-based maze, and Level 2 is a side-scrolling platformer with jumping, obstacles, and hitbox collision detection, plus a hidden treasure chest that decides whether you survive Level 3.",
-      "Level 3 is a survival fight where enemies use trigonometry to chase the player, with a health system, power-up hearts, and a final stage where you drop bombs on the attackers.",
-      "Animated characters frame by frame with Swing Timers, switched between screens with CardLayout, and added music and sound effects with the Java Sound API."
+      "Enemy AI: enemies chase the player in real time, steering toward them with trigonometry and vector math.",
+      "Side-scrolling platformer: checks every move before it happens to prevent wall-clipping, using Axis-Aligned Bounding Box (AABB) collision and a scrolling camera that only renders objects on screen.",
+      "Combat arena: bombs deal area-of-effect damage to every enemy in the blast radius, and enemies and thrown daggers live in dynamic arrays so any number can be on screen at once.",
+      "Custom animations, sound effects, and a story told across three levels."
     ],
-    tags: ["Java", "Java Swing", "Java Sound API"],
+    tags: ["Java", "OOP", "Swing", "2D Graphics", "Animation", "Event-Driven Programming", "State Management"],
     image: "assets/MurderOnEnchatedIslandHomePage.jpg",
     github: "https://github.com/tashvib/MurderOnEnchantedIsland"
   },
