@@ -20,7 +20,24 @@ const discoveryProject = {
 };
 
 // Projects. Optional link fields: github, devpost, demo, website
+// Optional extras: eyebrow, points (bullets), tags (tools), wide (full-width card),
+// image (leave "" for a placeholder panel until you have a screenshot).
 const projects = [
+  {
+    name: "RISC-V CPU",
+    eyebrow: "Silicon Jackets · Aug 2026 – Present",
+    wide: true,
+    image: "",            // e.g. "assets/riscv-layout.png" (waveform or chip layout screenshot)
+    placeholder: "RTL → GDSII",
+    description: "A RISC-V processor I designed in SystemVerilog and took all the way from RTL to a physical chip layout as part of the Silicon Jackets onboarding process at Georgia Tech.",
+    points: [
+      "Designed and implemented a RISC-V CPU in SystemVerilog, building RTL for arithmetic, load/store, branch, and shift instructions and integrating instruction/data SRAM.",
+      "Verified the CPU using directed and constrained-random testing, assertions, and scoreboarding; detected and characterized all 3 intentionally injected hardware bugs through waveform analysis.",
+      "Debugged RTL with Cadence Xcelium and SimVision and analyzed code coverage with Cadence IMC to identify untested processor behavior.",
+      "Converted the CPU's SystemVerilog RTL into a physical chip layout using Synopsys Design Compiler and Cadence Innovus, performing synthesis, floorplanning, static timing analysis, timing optimization, and DRC/LVS signoff."
+    ],
+    tags: ["SystemVerilog", "RISC-V", "Cadence Xcelium", "Cadence Innovus", "Synopsys Design Compiler"]
+  },
   {
     name: "Murder On Enchanted Island",
     description: "A multi-genre adventure game built entirely from scratch.",
@@ -183,24 +200,43 @@ function renderDiscovery(container){
 
 function renderProjects(container){
   projects.forEach(p => {
-    const card = el('article', 'card project-card reveal');
+    const card = el('article', 'card project-card reveal' + (p.wide ? ' is-wide' : ''));
     const media = el('div', 'project-image');
-    const img = document.createElement('img');
-    img.src = p.image;
-    img.alt = p.name + ' screenshot';
-    img.loading = 'lazy';
-    media.appendChild(img);
+    if(p.image){
+      const img = document.createElement('img');
+      img.src = p.image;
+      img.alt = p.name + ' screenshot';
+      img.loading = 'lazy';
+      media.appendChild(img);
+    } else {
+      media.classList.add('is-placeholder');
+      const label = el('span', 'placeholder-label');
+      label.textContent = p.placeholder || p.name;
+      media.appendChild(label);
+    }
 
     const body = el('div', 'project-body');
+    if(p.eyebrow){ const e = el('div', 'eyebrow'); e.textContent = p.eyebrow; body.appendChild(e); }
     body.appendChild(el('h3', 'card-title', p.name));
     body.appendChild(el('p', 'card-text', p.description || ''));
+
+    if(p.points && p.points.length){
+      const ul = el('ul', 'points');
+      p.points.forEach(pt => { const li = el('li'); li.textContent = pt; ul.appendChild(li); });
+      body.appendChild(ul);
+    }
+    if(p.tags && p.tags.length){
+      const tags = el('ul', 'tag-list');
+      p.tags.forEach(t => { const li = el('li'); li.textContent = t; tags.appendChild(li); });
+      body.appendChild(tags);
+    }
 
     const links = el('div', 'link-row');
     if(p.github) links.appendChild(linkBtn('GitHub', p.github, 'is-dark'));
     if(p.devpost) links.appendChild(linkBtn('Devpost', p.devpost));
     if(p.demo) links.appendChild(linkBtn('Live demo', p.demo));
     if(p.website || p.url) links.appendChild(linkBtn('Website', p.website || p.url));
-    body.appendChild(links);
+    if(links.children.length) body.appendChild(links);
 
     card.append(media, body);
     container.appendChild(card);
