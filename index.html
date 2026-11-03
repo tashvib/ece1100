@@ -8,7 +8,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css?v=6">
+    <link rel="stylesheet" href="styles.css?v=7">
   </head>
   <body>
     <header class="site-header">
@@ -27,12 +27,17 @@
     <main>
       <section class="hero">
         <div class="wrap">
+          <div class="hero-grid">
+          <div class="hero-text">
           <span class="badge">Seeking Summer 2027 internships</span>
           <h1 class="greeting">Hi, I'm Tashvi.</h1>
           <p class="typing" aria-label="Computer Engineering student, researcher, developer">
             <span id="typed-text">Computer Engineering @ Georgia Tech</span><span class="cursor" aria-hidden="true">|</span>
           </p>
           <p class="about-me">Welcome to my ePortfolio! I'm a first-year Computer Engineering student at Georgia Tech interested in AI/ML hardware acceleration, digital design, and explainable AI. Here you'll find my story, my resume, where I'm headed, and the projects I've built along the way.</p>
+          </div>
+          <img class="headshot" src="assets/headshot.webp" alt="Portrait of Tashvi Bansal" width="800" height="800">
+          </div>
 
           <nav class="tile-grid" aria-label="Explore">
             <a class="tile card" href="bio.html">
@@ -63,7 +68,7 @@
       </div>
     </footer>
 
-    <script src="site.js?v=6"></script>
+    <script src="site.js?v=7"></script>
     <script>
       (function(){
         const typed = document.getElementById('typed-text');
