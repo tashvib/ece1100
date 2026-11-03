@@ -45,6 +45,20 @@ const projects = [
 // Research. Optional fields: points, conferences, pdf, poster
 const research = [
   {
+    title: "Know Your Limits: On the Faithfulness of LLMs as Solvers and Autoformalizers in Legal Reasoning",
+    venue: "ICML 2026 Workshops · 2026",
+    pdf: "https://arxiv.org/pdf/2606.16118",
+    points: [
+      "Research Intern at the AIEA Lab (Prof. Leilani Gilpin), UC Santa Cruz, studying LLM reliability and formal reasoning.",
+      "Compared 3 reasoning methods (pure LLM classification, LLM-based formal reasoning, and Z3 solver-based formal reasoning).",
+      "Discovered \"scope laundering\" across all 5 LLMs tested, with rates ranging from 15.3% in GPT to 52.5% in Qwen."
+    ],
+    conferences: [
+      { name: "AI4Law Workshop at ICML 2026" },
+      { name: "AI for Math Workshop at ICML 2026" }
+    ]
+  },
+  {
     title: "Follow My Lead: Logical Fallacy Classification with Knowledge-Augmented LLMs",
     venue: "arXiv · 2025",
     pdf: "https://arxiv.org/pdf/2510.09970",
