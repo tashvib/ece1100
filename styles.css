@@ -217,7 +217,7 @@ h1, h2, h3{line-height:1.2; margin:0}
 
 /* resume */
 .resume-actions{margin-bottom:20px}
-.resume-frame{overflow:hidden; height:85vh; min-height:520px}
+.resume-frame{overflow:hidden; width:100%; aspect-ratio:8.5 / 11; max-width:900px; margin:0 auto}
 .resume-frame:hover{transform:none}
 .resume-frame iframe{width:100%; height:100%; display:block; border:0}
 .resume-fallback{padding:24px; color:var(--muted)}
@@ -276,6 +276,6 @@ h1, h2, h3{line-height:1.2; margin:0}
   .research-card, .community-card, .goal-card, .featured-body{padding:20px}
   .page-head{padding:40px 0 0}
   .featured-card{grid-template-columns:1fr}
-  .resume-frame{height:70vh}
+  .resume-frame{aspect-ratio:8.5 / 11.5}
   .projects-grid, .community-grid, .goals-grid{grid-template-columns:1fr}
 }
