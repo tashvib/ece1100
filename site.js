@@ -60,8 +60,19 @@ const projects = [
   }
 ];
 
-// Research. Optional fields: points, conferences, pdf, poster
+// Research. Optional fields: points, conferences, pdf, poster, upcoming (shows an "Upcoming" tag)
 const research = [
+  {
+    title: "GPU Cluster Optimization and Benchmarking",
+    venue: "AIGT Applied Research · Georgia Tech",
+    upcoming: true,
+    points: [
+      "Selected to join an applied research project under AIGT's Applied Research division, working hands-on with a cluster of 7 NVIDIA RTX 3090 GPUs at Georgia Tech's Advanced Technology Development Center (ATDC).",
+      "Hardware restoration: diagnose and resolve hardware issues to bring the cluster from 4 to all 7 GPUs online.",
+      "Benchmarking and optimization: evaluate GPU performance, PCIe bandwidth, memory utilization, and multi-GPU scaling, and benchmark large-model training workloads with frameworks such as MegaTrain.",
+      "Intel Xeon integration: investigate adding Intel Xeon hardware to the cluster to expand its compute capabilities and improve CPU–GPU performance."
+    ]
+  },
   {
     title: "Know Your Limits: On the Faithfulness of LLMs as Solvers and Autoformalizers in Legal Reasoning",
     venue: "ICML 2026 Workshops · 2026",
@@ -247,8 +258,11 @@ function renderProjects(container){
 
 function renderResearch(container){
   research.forEach(r => {
-    const card = el('article', 'card research-card reveal');
-    card.appendChild(el('div', 'eyebrow', r.venue));
+    const card = el('article', 'card research-card reveal' + (r.upcoming ? ' is-upcoming' : ''));
+    const eyebrow = el('div', 'eyebrow');
+    if(r.upcoming) eyebrow.appendChild(el('span', 'status-pill', 'Upcoming'));
+    eyebrow.appendChild(document.createTextNode(r.venue));
+    card.appendChild(eyebrow);
     const title = el('h3', 'card-title'); title.textContent = r.title; card.appendChild(title);
 
     if(r.points && r.points.length){
