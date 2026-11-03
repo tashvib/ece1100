@@ -36,13 +36,30 @@ const projects = [
   },
   {
     name: "Murder On Enchanted Island",
+    eyebrow: "Java Game | 2023",
     description: "A multi-genre adventure game built entirely from scratch.",
+    points: [
+      "Built a three-level adventure game from scratch in Java Swing (about 6,000 lines of code) where players work through mini-games to escape an island and its killer.",
+      "Level 1 is a grid-based maze, and Level 2 is a side-scrolling platformer with jumping, obstacles, and hitbox collision detection, plus a hidden treasure chest that decides whether you survive Level 3.",
+      "Level 3 is a survival fight where enemies use trigonometry to chase the player, with a health system, power-up hearts, and a final stage where you drop bombs on the attackers.",
+      "Animated characters frame by frame with Swing Timers, switched between screens with CardLayout, and added music and sound effects with the Java Sound API."
+    ],
+    tags: ["Java", "Java Swing", "Java Sound API"],
     image: "assets/MurderOnEnchatedIslandHomePage.jpg",
     github: "https://github.com/tashvib/MurderOnEnchantedIsland"
   },
   {
     name: "GreenOvation",
+    eyebrow: "iOS App | 2023",
     description: "An award-winning iOS app that gamifies waste disposal and sustainability education.",
+    points: [
+      "Built an iOS app in Swift that turns sustainable habits into a game: users earn ecopoints and compete on a live leaderboard stored in Firebase.",
+      "Waste-sorting quiz: an on-device Inception v3 image classifier (Core ML and Vision) identifies an item from the camera, and the user guesses whether it is recyclable, organic, e-waste, or hazardous.",
+      "CO2 impact scanner: real-time YOLOv5 object detection on the live camera feed looks up the carbon emissions of each detected object.",
+      "Also rates climate news headlines as positive or negative with an on-device sentiment classifier and matches users to volunteer opportunities based on their skills.",
+      "Reached over 100 users and was recognized at PoweringSTEMHacks2 and the Congressional App Challenge."
+    ],
+    tags: ["Swift", "UIKit", "Core ML", "Vision", "Firebase"],
     image: "assets/GreenovationLendingPage.jpg",
     github: "https://github.com/tashvib/GreenOvationCode_",
     devpost: "https://devpost.com/software/greenovation-h7d4v8"
