@@ -63,10 +63,10 @@ const projects = [
 const research = [
   {
     title: "GPU Cluster Optimization and Benchmarking",
-    venue: "AIGT Applied Research · Georgia Tech",
+    venue: "AI@GT Applied Research Division · Georgia Tech",
     upcoming: true,
     points: [
-      "Selected to join an applied research project under AIGT's Applied Research division, working hands-on with a cluster of 7 NVIDIA RTX 3090 GPUs at Georgia Tech's Advanced Technology Development Center (ATDC).",
+      "Selected to join an applied research project under AI@GT's Applied Research Division, working hands-on with a cluster of 7 NVIDIA RTX 3090 GPUs at Georgia Tech's Advanced Technology Development Center (ATDC).",
       "Hardware restoration: diagnose and resolve hardware issues to bring the cluster from 4 to all 7 GPUs online.",
       "Benchmarking and optimization: evaluate GPU performance, PCIe bandwidth, memory utilization, and multi-GPU scaling, and benchmark large-model training workloads with frameworks such as MegaTrain.",
       "Intel Xeon integration: investigate adding Intel Xeon hardware to the cluster to expand its compute capabilities and improve CPU–GPU performance."
