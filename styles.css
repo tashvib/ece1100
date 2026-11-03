@@ -181,6 +181,10 @@ h1, h2, h3{line-height:1.2; margin:0}
 .project-card.is-wide{grid-column:1 / -1; display:grid; grid-template-columns:minmax(0, 2fr) minmax(0, 3fr)}
 .project-card.is-wide .project-image{aspect-ratio:auto; min-height:100%; border-bottom:none; border-right:1px solid var(--border)}
 .project-card.is-wide .project-body{padding:26px 28px}
+/* wide card with a real screenshot: show the whole image on top, uncropped */
+.project-card.is-wide.has-image{grid-template-columns:1fr}
+.project-card.is-wide.has-image .project-image{border-right:none; border-bottom:1px solid var(--border); background:#1b1b1b}
+.project-card.is-wide.has-image .project-image img{height:auto; object-fit:contain}
 .project-image.is-placeholder{
   display:flex; align-items:center; justify-content:center; min-height:200px;
   background:

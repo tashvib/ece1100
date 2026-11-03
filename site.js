@@ -27,7 +27,8 @@ const projects = [
     name: "RISC-V CPU",
     eyebrow: "Silicon Jackets · Aug 2026 – Present",
     wide: true,
-    image: "",            // e.g. "assets/riscv-layout.png" (waveform or chip layout screenshot)
+    image: "assets/riscv-layout.webp",
+    imageAlt: "Cadence Virtuoso chip layout of the RISC-V CPU alongside Pegasus DRC results",
     placeholder: "RTL → GDSII",
     description: "A RISC-V processor I designed in SystemVerilog and took all the way from RTL to a physical chip layout as part of the Silicon Jackets onboarding process at Georgia Tech.",
     points: [
@@ -203,9 +204,10 @@ function renderProjects(container){
     const card = el('article', 'card project-card reveal' + (p.wide ? ' is-wide' : ''));
     const media = el('div', 'project-image');
     if(p.image){
+      card.classList.add('has-image');
       const img = document.createElement('img');
       img.src = p.image;
-      img.alt = p.name + ' screenshot';
+      img.alt = p.imageAlt || (p.name + ' screenshot');
       img.loading = 'lazy';
       media.appendChild(img);
     } else {
