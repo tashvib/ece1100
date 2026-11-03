@@ -57,7 +57,7 @@ const projects = [
       "Waste-sorting quiz: an on-device Inception v3 image classifier (Core ML and Vision) identifies an item from the camera, and the user guesses whether it is recyclable, organic, e-waste, or hazardous.",
       "CO2 impact scanner: real-time YOLOv5 object detection on the live camera feed looks up the carbon emissions of each detected object.",
       "Also rates climate news headlines as positive or negative with an on-device sentiment classifier and matches users to volunteer opportunities based on their skills.",
-      "Won \"Most Creative Hack\" at PoweringSTEMHacks2, was recognized at the Congressional App Challenge, and reached over 100 users."
+      "Won \"Most Creative Hack\" at PoweringSTEMHacks2, placed 3rd in the Congressional App Challenge for district OR-06, and reached over 100 users."
     ],
     tags: ["Swift", "UIKit", "Core ML", "Vision", "Firebase"],
     image: "assets/GreenovationLendingPage.jpg",
