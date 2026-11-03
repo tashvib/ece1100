@@ -266,6 +266,8 @@ h1, h2, h3{line-height:1.2; margin:0}
 .media-placeholder{color:var(--muted); font-size:14px}
 .featured-body{padding:26px 28px; display:flex; flex-direction:column}
 .featured-body .card-title{font-size:22px}
+.featured-card.is-upcoming, .featured-card.no-media{grid-template-columns:1fr}
+.featured-card.is-upcoming{border-style:dashed; border-color:color-mix(in srgb, var(--accent) 35%, transparent)}
 .mini-head{font-size:14px; font-weight:600; margin:18px 0 0}
 
 /* ---------------------------------------------------------------

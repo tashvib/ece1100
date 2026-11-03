@@ -7,13 +7,9 @@
 // Fill this in by Week 15. Set `ready: true` once it's done.
 const discoveryProject = {
   ready: false,
-  name: "ECE 1100 Discovery Project",
-  summary: "Summary coming soon: a short description of what the project is, the problem it tackles, and my role on the team.",
-  outcomes: [
-    "Key outcome #1 (what you built or found)",
-    "Key outcome #2 (results, measurements, or what worked)",
-    "Key outcome #3 (what you learned)"
-  ],
+  name: "Discovery Project Showcase",
+  summary: "",        // a short description of the project, the problem, and your role
+  outcomes: [],       // e.g. ["What you built", "Results", "What you learned"]
   image: "",          // e.g. "assets/discovery.jpg"
   video: "",          // optional YouTube embed URL, e.g. "https://www.youtube.com/embed/VIDEO_ID"
   links: []           // e.g. [{ label: "Slides", url: "https://..." }]
@@ -163,6 +159,21 @@ function linkBtn(label, href, variant){
 
 function renderDiscovery(container){
   const p = discoveryProject;
+
+  // Not ready yet: a simple "upcoming" card with just the title.
+  if(!p.ready){
+    const card = el('article', 'card featured-card is-upcoming reveal');
+    const body = el('div', 'featured-body');
+    const eyebrow = el('div', 'eyebrow');
+    eyebrow.appendChild(el('span', 'status-pill', 'Upcoming'));
+    eyebrow.appendChild(document.createTextNode('TBD'));
+    body.appendChild(eyebrow);
+    const title = el('h3', 'card-title'); title.textContent = p.name; body.appendChild(title);
+    card.appendChild(body);
+    container.appendChild(card);
+    return;
+  }
+
   const card = el('article', 'card featured-card reveal');
 
   const media = el('div', 'featured-media');
@@ -179,14 +190,12 @@ function renderDiscovery(container){
     img.alt = p.name;
     img.loading = 'lazy';
     media.appendChild(img);
-  } else {
-    media.appendChild(el('span', 'media-placeholder', 'Photos &amp; video coming soon'));
   }
 
   const body = el('div', 'featured-body');
-  body.appendChild(el('div', 'eyebrow', p.ready ? 'Featured · Discovery Project' : 'Featured · In progress'));
+  body.appendChild(el('div', 'eyebrow', 'Featured · Discovery Project'));
   const title = el('h3', 'card-title'); title.textContent = p.name; body.appendChild(title);
-  const summary = el('p', 'card-text'); summary.textContent = p.summary; body.appendChild(summary);
+  if(p.summary){ const summary = el('p', 'card-text'); summary.textContent = p.summary; body.appendChild(summary); }
   if(p.outcomes && p.outcomes.length){
     body.appendChild(el('h4', 'mini-head', 'Key outcomes'));
     const ul = el('ul', 'points');
@@ -199,7 +208,9 @@ function renderDiscovery(container){
     body.appendChild(row);
   }
 
-  card.append(media, body);
+  if(media.children.length) card.appendChild(media);
+  else card.classList.add('no-media');
+  card.appendChild(body);
   container.appendChild(card);
 }
 
