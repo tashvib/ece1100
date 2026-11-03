@@ -54,7 +54,7 @@ const research = [
       "Discovered \"scope laundering\" across all 5 LLMs tested, with rates ranging from 15.3% in GPT to 52.5% in Qwen."
     ],
     conferences: [
-      { name: "AI4Law Workshop at ICML 2026" },
+      { name: "AI4Law Workshop at ICML 2026", url: "https://icml.cc/virtual/2026/80630" },
       { name: "AI for Math Workshop at ICML 2026" }
     ]
   },
