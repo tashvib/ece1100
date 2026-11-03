@@ -26,11 +26,10 @@ const projects = [
   {
     name: "RISC-V CPU",
     eyebrow: "Silicon Jackets · Aug 2026 – Present",
-    wide: true,
-    image: "assets/riscv-layout.webp",
+    image: "assets/riscv-layout-card.webp",
     imageAlt: "Cadence Virtuoso chip layout of the RISC-V CPU alongside Pegasus DRC results",
     placeholder: "RTL → GDSII",
-    description: "A RISC-V processor I designed in SystemVerilog and took all the way from RTL to a physical chip layout as part of the Silicon Jackets onboarding process at Georgia Tech.",
+    description: "A RISC-V processor I designed in SystemVerilog and took from RTL all the way to a physical chip layout.",
     points: [
       "Designed and implemented a RISC-V CPU in SystemVerilog, building RTL for arithmetic, load/store, branch, and shift instructions and integrating instruction/data SRAM.",
       "Verified the CPU using directed and constrained-random testing, assertions, and scoreboarding; detected and characterized all 3 intentionally injected hardware bugs through waveform analysis.",
@@ -233,15 +232,27 @@ function renderProjects(container){
     body.appendChild(el('h3', 'card-title', p.name));
     body.appendChild(el('p', 'card-text', p.description || ''));
 
+    const extra = [];
     if(p.points && p.points.length){
       const ul = el('ul', 'points');
       p.points.forEach(pt => { const li = el('li'); li.textContent = pt; ul.appendChild(li); });
-      body.appendChild(ul);
+      extra.push(ul);
     }
     if(p.tags && p.tags.length){
       const tags = el('ul', 'tag-list');
       p.tags.forEach(t => { const li = el('li'); li.textContent = t; tags.appendChild(li); });
-      body.appendChild(tags);
+      extra.push(tags);
+    }
+    if(extra.length){
+      if(p.wide){
+        extra.forEach(x => body.appendChild(x));
+      } else {
+        // keep regular cards the same size: bullets and tools live behind a "Details" toggle
+        const details = el('details', 'card-details');
+        details.appendChild(el('summary', '', 'Details'));
+        extra.forEach(x => details.appendChild(x));
+        body.appendChild(details);
+      }
     }
 
     const links = el('div', 'link-row');
