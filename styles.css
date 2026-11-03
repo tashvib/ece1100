@@ -257,6 +257,9 @@ h1, h2, h3{line-height:1.2; margin:0}
 /* goals */
 .goals-grid{display:grid; grid-template-columns:repeat(auto-fit, minmax(300px, 1fr)); gap:20px}
 .goal-card{padding:26px 28px}
+.goal-why{margin-top:20px; padding-top:16px; border-top:1px solid var(--border)}
+.goal-why .mini-head{margin:0 0 6px}
+.goal-why p{margin:0; color:var(--muted)}
 
 /* featured discovery project */
 .featured-card{display:grid; grid-template-columns:1.1fr 1fr; overflow:hidden; border-color:var(--gold-soft)}
