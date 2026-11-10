@@ -203,6 +203,8 @@ h1, h2, h3{line-height:1.2; margin:0}
 .stack{display:flex; flex-direction:column; gap:20px}
 .research-card{padding:26px 28px}
 .research-card .card-title{font-size:20px; max-width:62ch}
+.research-head{display:flex; align-items:center; justify-content:space-between; gap:20px}
+.org-logo{width:64px; height:auto; flex:0 0 auto}
 .research-figure{margin:18px 0 0; max-width:760px}
 .research-figure img{width:100%; height:auto; border-radius:12px; border:1px solid var(--border)}
 .research-figure figcaption{margin-top:8px; font-size:13px; color:var(--muted)}
@@ -317,6 +319,7 @@ h1, h2, h3{line-height:1.2; margin:0}
   .page-head{padding:40px 0 0}
   .featured-card{grid-template-columns:1fr}
   .project-card.is-wide{grid-template-columns:1fr}
+  .org-logo{width:48px}
   .project-card.is-wide .project-image{border-right:none; border-bottom:1px solid var(--border); min-height:160px}
   .project-card.is-wide .project-body{padding:20px}
   .hero-grid{grid-template-columns:1fr; gap:28px}

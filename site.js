@@ -67,12 +67,13 @@ const projects = [
 ];
 
 // Research. Optional fields: points, conferences, pdf, poster, upcoming (shows an "Upcoming" tag),
-// figure ({ src, alt, caption } shows an image under the bullets)
+// figure ({ src, alt, caption } shows an image under the bullets), logo ({ src, alt } shows next to the title)
 const research = [
   {
     title: "GPU Cluster Optimization and Benchmarking",
     venue: "AI@GT Applied Research Division, Georgia Tech",
     upcoming: true,
+    logo: { src: "assets/aigt-logo.png", alt: "AI@GT logo" },
     figure: {
       src: "assets/gpu-cluster-plan.svg",
       alt: "Diagram of the planned GPU cluster: host CPU memory streams model layers over PCIe to seven RTX 3090 GPUs, four online and three to restore, with a scaling plan from 1 to 7 GPUs.",
@@ -307,8 +308,21 @@ function renderResearch(container){
     const eyebrow = el('div', 'eyebrow');
     if(r.upcoming) eyebrow.appendChild(el('span', 'status-pill', 'Upcoming'));
     eyebrow.appendChild(document.createTextNode(r.venue));
-    card.appendChild(eyebrow);
-    const title = el('h3', 'card-title'); title.textContent = r.title; card.appendChild(title);
+    const title = el('h3', 'card-title'); title.textContent = r.title;
+    if(r.logo && r.logo.src){
+      // organization logo sits to the right of the eyebrow and title
+      const head = el('div', 'research-head');
+      const text = el('div');
+      text.append(eyebrow, title);
+      const logo = document.createElement('img');
+      logo.className = 'org-logo';
+      logo.src = r.logo.src;
+      logo.alt = r.logo.alt || '';
+      head.append(text, logo);
+      card.appendChild(head);
+    } else {
+      card.append(eyebrow, title);
+    }
 
     if(r.points && r.points.length){
       const ul = el('ul', 'points');
