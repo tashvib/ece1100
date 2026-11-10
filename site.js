@@ -67,7 +67,7 @@ const projects = [
 ];
 
 // Research. Optional fields: points, conferences, pdf, poster, upcoming (shows an "Upcoming" tag),
-// figure ({ src, alt, caption } shows an image under the bullets), logo ({ src, alt } shows next to the title)
+// figure ({ src, alt, caption } shows an image under the bullets; use a list for several), logo ({ src, alt } shows next to the title)
 const research = [
   {
     title: "GPU Cluster Optimization and Benchmarking",
@@ -105,11 +105,18 @@ const research = [
     title: "Follow My Lead: Logical Fallacy Classification with Knowledge-Augmented LLMs",
     venue: "arXiv (2025)",
     pdf: "https://arxiv.org/pdf/2510.09970",
-    figure: {
-      src: "assets/acs-2025-poster.webp",
-      alt: "Tashvi Bansal standing with co-presenters beside the Follow My Lead research poster at Advances in Cognitive Systems 2025 at Georgia Tech.",
-      caption: "Presenting Follow My Lead at Advances in Cognitive Systems (ACS) 2025 at Georgia Tech."
-    },
+    figure: [
+      {
+        src: "assets/acs-2025-poster.webp",
+        alt: "Tashvi Bansal standing with co-presenters beside the Follow My Lead research poster at Advances in Cognitive Systems 2025 at Georgia Tech.",
+        caption: "Advances in Cognitive Systems (ACS) 2025 at Georgia Tech."
+      },
+      {
+        src: "assets/baylearn-2025-poster.webp",
+        alt: "Tashvi Bansal standing with a co-presenter beside the Follow My Lead research poster at the BayLearn Machine Learning Symposium.",
+        caption: "BayLearn Machine Learning Symposium."
+      }
+    ],
     points: [
       "Co-authored a paper on AI reasoning.",
       "Created the first \"chain of decision\" method making model decisions verifiable, enhancing interpretability.",
@@ -330,15 +337,20 @@ function renderResearch(container){
       card.appendChild(ul);
     }
 
-    if(r.figure && r.figure.src){
-      const fig = el('figure', 'research-figure');
-      const img = document.createElement('img');
-      img.src = r.figure.src;
-      img.alt = r.figure.alt || r.title;
-      img.loading = 'lazy';
-      fig.appendChild(img);
-      if(r.figure.caption){ const cap = el('figcaption'); cap.textContent = r.figure.caption; fig.appendChild(cap); }
-      card.appendChild(fig);
+    const figs = [].concat(r.figure || []).filter(f => f && f.src);
+    if(figs.length){
+      const row = el('div', 'research-figures' + (figs.length > 1 ? ' is-multi' : ''));
+      figs.forEach(f => {
+        const fig = el('figure', 'research-figure');
+        const img = document.createElement('img');
+        img.src = f.src;
+        img.alt = f.alt || r.title;
+        img.loading = 'lazy';
+        fig.appendChild(img);
+        if(f.caption){ const cap = el('figcaption'); cap.textContent = f.caption; fig.appendChild(cap); }
+        row.appendChild(fig);
+      });
+      card.appendChild(row);
     }
 
     if(r.conferences && r.conferences.length){

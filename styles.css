@@ -205,8 +205,13 @@ h1, h2, h3{line-height:1.2; margin:0}
 .research-card .card-title{font-size:20px; max-width:62ch}
 .research-head{display:flex; align-items:center; justify-content:space-between; gap:20px}
 .org-logo{width:64px; height:auto; flex:0 0 auto}
-.research-figure{margin:18px 0 0; max-width:760px}
+.research-figures{margin-top:18px}
+.research-figure{margin:0; max-width:760px}
 .research-figure img{width:100%; height:auto; border-radius:12px; border:1px solid var(--border)}
+/* several photos: same height side by side, nothing cropped */
+.research-figures.is-multi{display:flex; flex-wrap:wrap; gap:16px; align-items:flex-start}
+.research-figures.is-multi .research-figure{flex:0 0 auto}
+.research-figures.is-multi .research-figure img{height:360px; width:auto; max-width:100%}
 .research-figure figcaption{margin-top:8px; font-size:13px; color:var(--muted)}
 .conferences{margin-top:16px; display:flex; flex-wrap:wrap; align-items:baseline; gap:8px 10px}
 .conf-label{font-size:13px; font-weight:600; color:var(--text)}
@@ -320,6 +325,8 @@ h1, h2, h3{line-height:1.2; margin:0}
   .featured-card{grid-template-columns:1fr}
   .project-card.is-wide{grid-template-columns:1fr}
   .org-logo{width:48px}
+  .research-figures.is-multi .research-figure{flex:1 1 100%}
+  .research-figures.is-multi .research-figure img{height:auto; width:100%}
   .project-card.is-wide .project-image{border-right:none; border-bottom:1px solid var(--border); min-height:160px}
   .project-card.is-wide .project-body{padding:20px}
   .hero-grid{grid-template-columns:1fr; gap:28px}
