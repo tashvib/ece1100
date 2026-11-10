@@ -56,7 +56,7 @@ const projects = [
       "Built an iOS app in Swift that turns sustainable habits into a game: users earn ecopoints and compete on a live leaderboard stored in Firebase.",
       "Waste-sorting quiz: an on-device Inception v3 image classifier (Core ML and Vision) identifies an item from the camera, and the user guesses whether it is recyclable, organic, e-waste, or hazardous.",
       "CO2 impact scanner: real-time YOLOv5 object detection on the live camera feed looks up the carbon emissions of each detected object.",
-      "Also rates climate news headlines as positive or negative with an on-device sentiment classifier and matches users to volunteer opportunities based on their skills.",
+      "Rates climate news headlines as positive or negative with an on-device sentiment classifier and matches users to volunteer opportunities based on their skills.",
       "Won \"Most Creative Hack\" at PoweringSTEMHacks2, placed 3rd in the Congressional App Challenge for district OR-06, and reached over 100 users."
     ],
     tags: ["Swift", "UIKit", "Core ML", "Vision", "Firebase"],
@@ -120,7 +120,7 @@ const research = [
     points: [
       "Co-authored a paper on AI reasoning.",
       "Created the first \"chain of decision\" method making model decisions verifiable, enhancing interpretability.",
-      "Developed novel neurosymbolic AI method to improve LLM logical reasoning by 20.7% accuracy without expensive model training.",
+      "Developed a novel neurosymbolic AI method that improved LLM logical reasoning accuracy by 20.7% without expensive model training.",
       "Learned logic programming in Prolog, AWS (Bedrock, S3), RAG, and prompt engineering."
     ],
     conferences: [
@@ -161,7 +161,7 @@ const community = [
     org: "theCoderSchool",
     points: [
       "Led 2 <strong>in-person</strong> summer <strong>coding camps</strong>; entrusted by my manager with running the space and keeping 25 students safe.",
-      "Designed CodingBat curriculum; helped students break down problems, trace code, and explained abstract algorithms to varying levels of learners."
+      "Designed a CodingBat curriculum; helped students break down problems and trace code, and explained abstract algorithms to learners at varying levels."
     ]
   },
   {
