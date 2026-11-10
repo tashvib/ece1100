@@ -104,6 +104,11 @@ const research = [
     title: "Follow My Lead: Logical Fallacy Classification with Knowledge-Augmented LLMs",
     venue: "arXiv (2025)",
     pdf: "https://arxiv.org/pdf/2510.09970",
+    figure: {
+      src: "assets/acs-2025-poster.webp",
+      alt: "Tashvi Bansal standing with co-presenters beside the Follow My Lead research poster at Advances in Cognitive Systems 2025 at Georgia Tech.",
+      caption: "Presenting Follow My Lead at Advances in Cognitive Systems (ACS) 2025 at Georgia Tech."
+    },
     points: [
       "Co-authored a paper on AI reasoning.",
       "Created the first \"chain of decision\" method making model decisions verifiable, enhancing interpretability.",
