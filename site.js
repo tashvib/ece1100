@@ -98,7 +98,7 @@ const research = [
     venue: "arXiv (2025)",
     pdf: "https://arxiv.org/pdf/2510.09970",
     points: [
-      "Co-authored AI reasoning paper",
+      "Co-authored a paper on AI reasoning.",
       "Created the first \"chain of decision\" method making model decisions verifiable, enhancing interpretability.",
       "Developed novel neurosymbolic AI method to improve LLM logical reasoning by 20.7% accuracy without expensive model training.",
       "Learned logic programming in Prolog, AWS (Bedrock, S3), RAG, and prompt engineering."
@@ -113,9 +113,9 @@ const research = [
     venue: "Research Paper (2024)",
     pdf: "https://drive.google.com/file/d/1-46Ep7oWloXVb9eyrHY4FGZORyh-WCLt/view?usp=sharing",
     points: [
-      "Built Natural Language Processing pipelines to discover political bias patterns",
+      "Built Natural Language Processing pipelines to discover political bias patterns.",
       "Developed a hybrid LLM and probabilistic topic modeling method to process data.",
-      "Primary author and presenter of paper to 150+ PhDs and Profs at Capstone Seminar, Southern California & Natl. Conference for Undergraduate Research."
+      "Primary author and presenter of the paper to 150+ PhDs and professors at the Capstone Seminar, the Southern California Conference for Undergraduate Research, and the National Conference for Undergraduate Research."
     ],
     conferences: [
       { name: "Southern California Conference for Undergraduate Research" },
@@ -128,8 +128,8 @@ const research = [
     pdf: "https://drive.google.com/file/d/1pxGPWxUAHrLOtAsLrvLUJMcptFZYDSG_/view?usp=sharing",
     poster: "https://docs.google.com/presentation/d/1sH1uCYneM2FHOw3DITIsagd2ubruiLCXc8imiBe4tEo/edit?usp=sharing",
     points: [
-      "Built an improved machine learning model that predicts homelessness rates across U.S. communities with 85% accuracy",
-      "Identified which community factors (housing costs, job availability, social services) have the biggest impact on homelessness to help guide more efficient government spending"
+      "Built an improved machine learning model that predicts homelessness rates across U.S. communities with 85% accuracy.",
+      "Identified which community factors (housing costs, job availability, social services) have the biggest impact on homelessness to help guide more efficient government spending."
     ]
   }
 ];
@@ -140,7 +140,7 @@ const community = [
     title: "Code Coach",
     org: "theCoderSchool",
     points: [
-      "Led 2 <strong>in-person</strong> summer <strong>coding camps</strong>; entrusted by Manager with operation of space and safety of 25 students.",
+      "Led 2 <strong>in-person</strong> summer <strong>coding camps</strong>; entrusted by my manager with running the space and keeping 25 students safe.",
       "Designed CodingBat curriculum; helped students break down problems, trace code, and explained abstract algorithms to varying levels of learners."
     ]
   },
@@ -148,8 +148,8 @@ const community = [
     title: "Tutor",
     org: "Schoolhouse.world & Vivekanand High School",
     points: [
-      "Tutored 19 learners across Azerbaijan, Egypt, Ghana, India, and Pakistan through Schoolhouse.world",
-      "Led AI education session for students at Vivekanand High School"
+      "Tutored 19 learners across Azerbaijan, Egypt, Ghana, India, and Pakistan through Schoolhouse.world.",
+      "Led an AI education session for students at Vivekanand High School."
     ]
   }
 ];
