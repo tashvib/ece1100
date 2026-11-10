@@ -203,6 +203,9 @@ h1, h2, h3{line-height:1.2; margin:0}
 .stack{display:flex; flex-direction:column; gap:20px}
 .research-card{padding:26px 28px}
 .research-card .card-title{font-size:20px; max-width:62ch}
+.research-figure{margin:18px 0 0; max-width:760px}
+.research-figure img{width:100%; height:auto; border-radius:12px; border:1px solid var(--border)}
+.research-figure figcaption{margin-top:8px; font-size:13px; color:var(--muted)}
 .conferences{margin-top:16px; display:flex; flex-wrap:wrap; align-items:baseline; gap:8px 10px}
 .conf-label{font-size:13px; font-weight:600; color:var(--text)}
 .conf-list{display:contents; list-style:none}

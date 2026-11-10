@@ -1,0 +1,54 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400" role="img" aria-labelledby="t d" font-family="Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif">
+  <title id="t">Planned GPU cluster setup</title>
+  <desc id="d">Diagram of the planned cluster: host CPU memory holds the model and optimizer state and streams layers over PCIe to seven RTX 3090 GPUs. Four GPUs are online and three are to be restored. Training scales from 1 to 2, 4, and 7 GPUs.</desc>
+
+  <rect width="800" height="400" rx="18" fill="#f7f3ee"/>
+
+  <!-- Host -->
+  <rect x="32" y="64" width="232" height="232" rx="14" fill="#ffffff" stroke="#1f3a5f" stroke-width="2"/>
+  <text x="148" y="98" text-anchor="middle" font-size="17" font-weight="700" fill="#1f3a5f">Host CPU + RAM</text>
+  <rect x="52" y="116" width="192" height="56" rx="10" fill="#e8eef6"/>
+  <text x="148" y="140" text-anchor="middle" font-size="13" fill="#1f1d1b">Model weights and</text>
+  <text x="148" y="158" text-anchor="middle" font-size="13" fill="#1f1d1b">optimizer state</text>
+  <rect x="52" y="184" width="192" height="44" rx="10" fill="#e8eef6"/>
+  <text x="148" y="211" text-anchor="middle" font-size="13" fill="#1f1d1b">Slurm job scheduler</text>
+  <rect x="52" y="240" width="192" height="40" rx="10" fill="none" stroke="#8a7a3f" stroke-width="1.5" stroke-dasharray="5 4"/>
+  <text x="148" y="265" text-anchor="middle" font-size="13" fill="#8a7a3f">Intel Xeon (planned)</text>
+
+  <!-- PCIe link -->
+  <line x1="272" y1="180" x2="388" y2="180" stroke="#1f3a5f" stroke-width="3"/>
+  <polygon points="388,172 404,180 388,188" fill="#1f3a5f"/>
+  <text x="336" y="164" text-anchor="middle" font-size="13" font-weight="600" fill="#1f3a5f">PCIe 4.0 x16</text>
+  <text x="336" y="204" text-anchor="middle" font-size="12" fill="#6b635c">streams layers</text>
+  <text x="336" y="220" text-anchor="middle" font-size="12" fill="#6b635c">to each GPU</text>
+
+  <!-- GPUs -->
+  <text x="590" y="58" text-anchor="middle" font-size="17" font-weight="700" fill="#1f3a5f">7x NVIDIA RTX 3090</text>
+  <g font-size="13" font-weight="600" text-anchor="middle">
+    <rect x="420" y="76" width="80" height="64" rx="10" fill="#3fa35b"/><text x="460" y="113" fill="#ffffff">GPU 1</text>
+    <rect x="510" y="76" width="80" height="64" rx="10" fill="#3fa35b"/><text x="550" y="113" fill="#ffffff">GPU 2</text>
+    <rect x="600" y="76" width="80" height="64" rx="10" fill="#3fa35b"/><text x="640" y="113" fill="#ffffff">GPU 3</text>
+    <rect x="690" y="76" width="80" height="64" rx="10" fill="#3fa35b"/><text x="730" y="113" fill="#ffffff">GPU 4</text>
+    <rect x="465" y="152" width="80" height="64" rx="10" fill="#ffffff" stroke="#9b938b" stroke-width="2" stroke-dasharray="6 4"/><text x="505" y="189" fill="#6b635c">GPU 5</text>
+    <rect x="555" y="152" width="80" height="64" rx="10" fill="#ffffff" stroke="#9b938b" stroke-width="2" stroke-dasharray="6 4"/><text x="595" y="189" fill="#6b635c">GPU 6</text>
+    <rect x="645" y="152" width="80" height="64" rx="10" fill="#ffffff" stroke="#9b938b" stroke-width="2" stroke-dasharray="6 4"/><text x="685" y="189" fill="#6b635c">GPU 7</text>
+  </g>
+  <g font-size="12" fill="#1f1d1b">
+    <rect x="452" y="236" width="14" height="14" rx="3" fill="#3fa35b"/><text x="474" y="248">Online (4)</text>
+    <rect x="574" y="236" width="14" height="14" rx="3" fill="#ffffff" stroke="#9b938b" stroke-width="1.5" stroke-dasharray="3 2"/><text x="596" y="248">To restore (3)</text>
+  </g>
+
+  <!-- Scaling plan -->
+  <text x="400" y="320" text-anchor="middle" font-size="14" font-weight="700" fill="#1f3a5f">Scaling plan</text>
+  <g font-size="14" font-weight="600" text-anchor="middle">
+    <rect x="196" y="334" width="84" height="38" rx="19" fill="#1f3a5f"/><text x="238" y="358" fill="#ffffff">1 GPU</text>
+    <text x="310" y="358" fill="#8a7a3f">→</text>
+    <rect x="340" y="334" width="84" height="38" rx="19" fill="#1f3a5f"/><text x="382" y="358" fill="#ffffff">2 GPUs</text>
+    <text x="454" y="358" fill="#8a7a3f">→</text>
+    <rect x="484" y="334" width="84" height="38" rx="19" fill="#1f3a5f"/><text x="526" y="358" fill="#ffffff">4 GPUs</text>
+    <text x="598" y="358" fill="#8a7a3f">→</text>
+    <rect x="628" y="334" width="84" height="38" rx="19" fill="#1f3a5f"/><text x="670" y="358" fill="#ffffff">7 GPUs</text>
+  </g>
+  <text x="104" y="358" text-anchor="middle" font-size="12" fill="#6b635c">measure scaling</text>
+  <text x="104" y="374" text-anchor="middle" font-size="12" fill="#6b635c">at every step</text>
+</svg>

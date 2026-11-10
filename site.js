@@ -66,12 +66,18 @@ const projects = [
   }
 ];
 
-// Research. Optional fields: points, conferences, pdf, poster, upcoming (shows an "Upcoming" tag)
+// Research. Optional fields: points, conferences, pdf, poster, upcoming (shows an "Upcoming" tag),
+// figure ({ src, alt, caption } shows an image under the bullets)
 const research = [
   {
     title: "GPU Cluster Optimization and Benchmarking",
     venue: "AI@GT Applied Research Division, Georgia Tech",
     upcoming: true,
+    figure: {
+      src: "assets/gpu-cluster-plan.svg",
+      alt: "Diagram of the planned GPU cluster: host CPU memory streams model layers over PCIe to seven RTX 3090 GPUs, four online and three to restore, with a scaling plan from 1 to 7 GPUs.",
+      caption: "Planned cluster setup (diagram I made from the project plan)."
+    },
     points: [
       "Selected to join an applied research project under AI@GT's Applied Research Division, working hands-on with a cluster of 7 NVIDIA RTX 3090 GPUs at Georgia Tech's Advanced Technology Development Center (ATDC).",
       "Hardware restoration: diagnose and resolve hardware issues to bring the cluster from 4 to all 7 GPUs online, then record each GPU's PCIe link, NUMA node, and thermals to set a hardware baseline.",
@@ -303,6 +309,17 @@ function renderResearch(container){
       const ul = el('ul', 'points');
       r.points.forEach(pt => { const li = el('li'); li.textContent = pt; ul.appendChild(li); });
       card.appendChild(ul);
+    }
+
+    if(r.figure && r.figure.src){
+      const fig = el('figure', 'research-figure');
+      const img = document.createElement('img');
+      img.src = r.figure.src;
+      img.alt = r.figure.alt || r.title;
+      img.loading = 'lazy';
+      fig.appendChild(img);
+      if(r.figure.caption){ const cap = el('figcaption'); cap.textContent = r.figure.caption; fig.appendChild(cap); }
+      card.appendChild(fig);
     }
 
     if(r.conferences && r.conferences.length){
