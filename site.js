@@ -76,7 +76,7 @@ const research = [
     figure: {
       src: "assets/gpu-cluster-plan.svg",
       alt: "Diagram of the planned GPU cluster: host CPU memory streams model layers over PCIe to seven RTX 3090 GPUs, four online and three to restore, with a scaling plan from 1 to 7 GPUs.",
-      caption: "Planned cluster setup (diagram I made from the project plan)."
+      caption: "Planned cluster setup."
     },
     points: [
       "Selected to join an applied research project under AI@GT's Applied Research Division, working hands-on with a cluster of 7 NVIDIA RTX 3090 GPUs at Georgia Tech's Advanced Technology Development Center (ATDC).",
