@@ -74,8 +74,9 @@ const research = [
     upcoming: true,
     points: [
       "Selected to join an applied research project under AI@GT's Applied Research Division, working hands-on with a cluster of 7 NVIDIA RTX 3090 GPUs at Georgia Tech's Advanced Technology Development Center (ATDC).",
-      "Hardware restoration: diagnose and resolve hardware issues to bring the cluster from 4 to all 7 GPUs online.",
-      "Benchmarking and optimization: evaluate GPU performance, PCIe bandwidth, memory utilization, and multi-GPU scaling, and benchmark large-model training workloads with frameworks such as MegaTrain.",
+      "Hardware restoration: diagnose and resolve hardware issues to bring the cluster from 4 to all 7 GPUs online, then record each GPU's PCIe link, NUMA node, and thermals to set a hardware baseline.",
+      "Benchmarking and optimization: set up MegaTrain, a framework that trains large language models by streaming layers from CPU memory through the GPU, tune it on a single RTX 3090, and scale it from 1 to 2, 4, and all 7 GPUs while measuring throughput and scaling efficiency.",
+      "Cluster tuning: keep each GPU worker's CPU cores and memory on the closest NUMA node and launch training jobs through the Slurm scheduler with CPU, memory, and GPU binding.",
       "Intel Xeon integration: investigate adding Intel Xeon hardware to the cluster to expand its compute capabilities and improve CPU–GPU performance."
     ]
   },
